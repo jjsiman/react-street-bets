@@ -13,7 +13,7 @@ function App() {
 
   const [stockOverview, setStockOverview] = useState<SymbolOverview>();
   const [stockData, setStockData] = useState<TimeSeriesData>();
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
 
   useEffect(() => {
     if (!stockSymbol.length) {
@@ -32,7 +32,7 @@ function App() {
   }, [stockSymbol]);
 
   let view = null;
-  if (!error && stockOverview && stockData) {
+  if (stockOverview && stockData) {
     view = (
       <Container>
         <Row className="justify-content-center">
